@@ -1,0 +1,15 @@
+import random
+
+def guess(n):
+    random_number = random.randint(1, n)
+    guess = 0
+    while guess != random_number:
+        guess = int(input(f"Make a guess between 1 and {n}:"))
+        if guess < random_number:
+            print("Wrong guess. Too low")
+        elif guess > random_number:
+            print("Wrong guess. Too high")
+            
+    print("Congratulations, you have guessed correctly.",'\n',f"The number is {random_number}.")
+
+guess(10)
