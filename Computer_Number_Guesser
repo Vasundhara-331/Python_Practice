@@ -1,3 +1,4 @@
+import random 
 def comp_guess(n):
     low = 1
     high = n
