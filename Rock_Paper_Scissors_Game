@@ -1,0 +1,32 @@
+import random
+
+def game():
+    print("r for rock, s for scissors and p for paper",'\n')
+    
+    while True:
+        user = input("Your choice:")
+        if user not in ['r', 's', 'p']:
+            print("Invalid input! Please enter 'r', 's', or 'p'.")
+        else:
+            break
+    
+    comp = random.choice(['r', 's', 'p'])
+
+    if user == comp:
+        print("Computer chose:", comp)
+        return "Tie"
+
+    if win(user, comp):
+        print("Computer chose:", comp)
+        return "You win!"
+        
+    print("Computer chose:", comp)
+    return "You lost!"
+
+def win(player, opponent):
+    if (player == 's' and opponent == 'p') or \
+       (player == 'r' and opponent == 's') or \
+       (player == 'p' and opponent == 'r'):
+        return True
+
+print(game())
